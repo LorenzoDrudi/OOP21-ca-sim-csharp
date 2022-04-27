@@ -1,8 +1,7 @@
-using System.Linq;
 using NUnit.Framework;
 using Sanzani.Ranges;
 
-namespace SanzaniTest.TestRanges;
+namespace SanzaniTest;
 
 public class RangesTest
 {
