@@ -2,17 +2,17 @@ using System;
 
 namespace Zama.Coordinates
 {
-    public class Coordinates2D<T> : ICoordinates<T> where T : IComparable<T>
+    public class Coordinates2D : ICoordinates<int>
     {
-        public T X { get; }
-        public T Y { get; }
+        public int X { get; }
+        public int Y { get; }
 
         /// <summary>
-        ///  Initializes a new instance of the <see cref="Coordinates2D{T}"/> class.
+        ///  Initializes a new instance of the <see cref="Coordinates2D"/> class.
         /// </summary>
         /// <param name="x">the x value of the coordinate</param>
         /// <param name="y">the y value of the coordinate</param>
-        public  Coordinates2D(T x, T y)
+        public Coordinates2D(int x, int y)
         {
             X = x;
             Y = y;
@@ -28,16 +28,21 @@ namespace Zama.Coordinates
             return HashCode.Combine(X, Y);
         }
 
-        public bool Equals(Coordinates2D<T> other)
+        public bool Equals(Coordinates2D other)
         {
-            return X.CompareTo(other.X) == 0 && Y.CompareTo(other.Y) == 0;
+            return X.Equals(other.X) && Y.Equals(other.Y);
         }
         
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == this.GetType() && Equals((Coordinates2D<T>) obj);
+            return obj.GetType() == this.GetType() && Equals((Coordinates2D) obj);
         }
+
+        public static Coordinates2D operator +(Coordinates2D a, Coordinates2D b) =>
+            new Coordinates2D(a.X + b.X, a.Y + b.Y);
+
+        public static Coordinates2D operator -(Coordinates2D a, Coordinates2D b) => a + new Coordinates2D(-b.X, -b.Y);
     }
 }
