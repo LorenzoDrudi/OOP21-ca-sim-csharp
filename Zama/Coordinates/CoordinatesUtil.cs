@@ -4,13 +4,8 @@ using System.Linq;
 
 namespace Zama.Coordinates
 {
-    public class CoordinatesUtil
+    public static class CoordinatesUtil
     {
-        private CoordinatesUtil()
-        {
-            
-        }
-
         public static Coordinates2D Of(int x, int y) => new Coordinates2D(x, y);
 
         public static bool IsValid(Coordinates2D coord, Coordinates2D topLeft, Coordinates2D bottomRight) =>

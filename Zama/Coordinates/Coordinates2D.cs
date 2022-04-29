@@ -37,7 +37,7 @@ namespace Zama.Coordinates
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == this.GetType() && Equals((Coordinates2D) obj);
+            return obj.GetType() == GetType() && Equals((Coordinates2D) obj);
         }
 
         public static Coordinates2D operator +(Coordinates2D a, Coordinates2D b) =>
