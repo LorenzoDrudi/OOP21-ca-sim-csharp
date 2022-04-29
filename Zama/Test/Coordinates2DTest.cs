@@ -3,6 +3,7 @@ using Zama.Coordinates;
 
 namespace Zama.Test
 {
+    [TestFixture]
     public class Coordinates2DTest
     {
         [Test]
