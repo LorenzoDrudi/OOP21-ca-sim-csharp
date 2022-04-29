@@ -35,5 +35,16 @@ namespace Zama.Test
             Assert.AreEqual(a.X + b.X, (a + b).X);
             Assert.AreEqual(a.Y + b.Y, (a + b).Y);
         }
+
+        [Test]
+        public void TestSubtractionOperator()
+        {
+            var value01 = 3;
+            var value02 = 18;
+            var a = CoordinatesUtil.Of(value01, value02);
+            var b = CoordinatesUtil.Of(value02, value02);
+            Assert.AreEqual(a.X - b.X, (a - b).X);
+            Assert.AreEqual(a.Y - b.Y, (a - b).Y);
+        }
     }
 }
