@@ -1,20 +1,23 @@
-namespace Sanzani.States;
-
-/// <summary>
-/// Enum representing the state of a Bryan's Brain cell.
-/// </summary>
-public enum BryansBrainCellState
+namespace Sanzani.States
 {
     /// <summary>
-    /// Alive cell.
+    ///     Enum representing the state of a Bryan's Brain cell.
     /// </summary>
-    ALIVE,
-    /// <summary>
-    /// Dying cell.
-    /// </summary>
-    DYING,
-    /// <summary>
-    /// Dead cell.
-    /// </summary>
-    DEAD
+    public enum BryansBrainCellState
+    {
+        /// <summary>
+        ///     Alive cell.
+        /// </summary>
+        Alive,
+
+        /// <summary>
+        ///     Dying cell.
+        /// </summary>
+        Dying,
+
+        /// <summary>
+        ///     Dead cell.
+        /// </summary>
+        Dead
+    }
 }

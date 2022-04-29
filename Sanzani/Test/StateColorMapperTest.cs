@@ -3,68 +3,70 @@ using NUnit.Framework;
 using Sanzani.StateColorMapper;
 using Sanzani.States;
 
-namespace SanzaniTest;
-
-public class StateColorMapperTest
+namespace Sanzani.Test
 {
-    private readonly IStateColorMapperFactory _factory;
+    [TestFixture]
+    public class StateColorMapperTest
+    {
+        private readonly IStateColorMapperFactory _factory;
 
-    public StateColorMapperTest()
-    {
-        _factory = new StateColorMapperFactory();
-    }
+        public StateColorMapperTest()
+        {
+            _factory = new StateColorMapperFactory();
+        }
 
-    [Test]
-    public void TestBryansBrainColorMapper()
-    {
-        var mapper = _factory.GetBryansBrainStateColorMapper();
-        Assert.AreEqual(mapper.ToColor(BryansBrainCellState.ALIVE), Color.White);
-        Assert.AreEqual(mapper.ToColor(BryansBrainCellState.DYING), Color.LightBlue);
-        Assert.AreEqual(mapper.ToColor(BryansBrainCellState.DEAD), Color.Black);
-    }
+        [Test]
+        public void TestBryansBrainColorMapper()
+        {
+            var mapper = _factory.GetBryansBrainStateColorMapper();
+            Assert.AreEqual(Color.White, mapper.ToColor(BryansBrainCellState.Alive));
+            Assert.AreEqual(Color.LightBlue, mapper.ToColor(BryansBrainCellState.Dying));
+            Assert.AreEqual(Color.Black, mapper.ToColor(BryansBrainCellState.Dead));
+        }
 
-    [Test]
-    public void TestLangtonsAntColorMapper()
-    {
-        var mapper = _factory.GetLangtonsAntStateColorMapper();
-        Assert.AreEqual(mapper.ToColor(LangtonsAntCellState.ON), Color.White);
-        Assert.AreEqual(mapper.ToColor(LangtonsAntCellState.OFF), Color.Black);
-    }
-    
-    [Test]
-    public void TestGameOfLifeColorMapper()
-    {
-        var mapper = _factory.GetGameOfLifeStateColorMapper();
-        Assert.AreEqual(mapper.ToColor(GameOfLifeState.ALIVE), Color.White);
-        Assert.AreEqual(mapper.ToColor(GameOfLifeState.DEAD), Color.Black);
-    }
-    
-    [Test]
-    public void TestRule110ColorMapper()
-    {
-        var mapper = _factory.GetRule110StateColorMapper();
-        Assert.AreEqual(mapper.ToColor(Rule110CellState.ALIVE), Color.White);
-        Assert.AreEqual(mapper.ToColor(Rule110CellState.DEAD), Color.Black);
-    }
-    
-    
-    [Test]
-    public void TestWatorColorMapper()
-    {
-        var mapper = _factory.GetWatorStateColorMapper();
-        Assert.AreEqual(mapper.ToColor(WatorCellState.DEAD), Color.Black);
-        Assert.AreEqual(mapper.ToColor(WatorCellState.PREDATOR), Color.Red);
-        Assert.AreEqual(mapper.ToColor(WatorCellState.PREY), Color.Green);
-    }
+        [Test]
+        public void TestLangtonsAntColorMapper()
+        {
+            var mapper = _factory.GetLangtonsAntStateColorMapper();
+            Assert.AreEqual(Color.White, mapper.ToColor(LangtonsAntCellState.On));
+            Assert.AreEqual(Color.Black, mapper.ToColor(LangtonsAntCellState.Off));
+        }
 
-    public void TestCoDiColorMapper()
-    {
-        var mapper = _factory.GetCoDiStateColorMapper();
-        Assert.AreEqual(mapper.ToColor(CoDiCellState.BLANK), Color.Black);
-        Assert.AreEqual(mapper.ToColor(CoDiCellState.AXON), Color.Fuchsia);
-        Assert.AreEqual(mapper.ToColor(CoDiCellState.NEURON), Color.MediumPurple);
-        Assert.AreEqual(mapper.ToColor(CoDiCellState.DENDRITE), Color.Aqua);
-        Assert.AreEqual(mapper.ToColor(CoDiCellState.ACTIVATE_AXON), Color.Coral);
-        Assert.AreEqual(mapper.ToColor(CoDiCellState.ACTIVATE_DENDRITE), Color.GreenYellow);
-    }
+        [Test]
+        public void TestGameOfLifeColorMapper()
+        {
+            var mapper = _factory.GetGameOfLifeStateColorMapper();
+            Assert.AreEqual(Color.White, mapper.ToColor(GameOfLifeState.Alive));
+            Assert.AreEqual(Color.Black, mapper.ToColor(GameOfLifeState.Dead));
+        }
+
+        [Test]
+        public void TestRule110ColorMapper()
+        {
+            var mapper = _factory.GetRule110StateColorMapper();
+            Assert.AreEqual(Color.White, mapper.ToColor(Rule110CellState.Alive));
+            Assert.AreEqual(Color.Black, mapper.ToColor(Rule110CellState.Dead));
+        }
+
+
+        [Test]
+        public void TestWatorColorMapper()
+        {
+            var mapper = _factory.GetWatorStateColorMapper();
+            Assert.AreEqual(Color.Black, mapper.ToColor(WatorCellState.Dead));
+            Assert.AreEqual(Color.Red, mapper.ToColor(WatorCellState.Predator));
+            Assert.AreEqual(Color.Green, mapper.ToColor(WatorCellState.Prey));
+        }
+
+        public void TestCoDiColorMapper()
+        {
+            var mapper = _factory.GetCoDiStateColorMapper();
+            Assert.AreEqual(Color.Black, mapper.ToColor(CoDiCellState.Blank));
+            Assert.AreEqual(Color.Fuchsia, mapper.ToColor(CoDiCellState.Axon));
+            Assert.AreEqual(Color.MediumPurple, mapper.ToColor(CoDiCellState.Neuron));
+            Assert.AreEqual(Color.Aqua, mapper.ToColor(CoDiCellState.Dendrite));
+            Assert.AreEqual(Color.Coral, mapper.ToColor(CoDiCellState.ActivateAxon));
+            Assert.AreEqual(Color.GreenYellow, mapper.ToColor(CoDiCellState.ActivateDendrite));
+        }
+    }    
 }

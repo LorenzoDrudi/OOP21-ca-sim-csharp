@@ -1,90 +1,80 @@
 using NUnit.Framework;
-using Sanzani.Ranges;
+using Sanzani.RangeUtils;
 
-namespace SanzaniTest;
-
-public class RangesTest
+namespace Sanzani.Test
 {
-    private const int IntRangeStart = 0;
-    private const int IntRangeEnd = 10;
-    private const int IntRangeStep = 2;
-    private const double DoubleRangeStart = 0.5;
-    private const double DoubleRangeEnd = 5.0;
-    private const double DoubleRangeStep = 1.5;
-
-    [Test]
-    public void TestOfGeneric()
+    [TestFixture]
+    public class RangesTest
     {
-        var emptyRange = Ranges.Of(IntRangeStart, IntRangeStart, x => x + 1).GetEnumerator();
-        var range1 = Ranges.Of(IntRangeStart, IntRangeEnd, x => x + IntRangeStep).GetEnumerator();
-        var range2 = Ranges.Of(DoubleRangeStart, DoubleRangeEnd, x => x + DoubleRangeStep).GetEnumerator();
+        private const int IntRangeStart = 0;
+        private const int IntRangeEnd = 10;
+        private const int IntRangeStep = 2;
+        private const double DoubleRangeStart = 0.5;
+        private const double DoubleRangeEnd = 5.0;
+        private const double DoubleRangeStep = 1.5;
 
-        Assert.False(emptyRange.MoveNext());
-
-        for (int i = IntRangeStart; i < IntRangeEnd; i += IntRangeStep)
+        [Test]
+        public void TestOfGeneric()
         {
-            Assert.AreEqual(range1.Current, i);
-            if (i + IntRangeStep < IntRangeEnd)
+            var emptyRange = Ranges.Of(IntRangeStart, IntRangeStart, x => x + 1).GetEnumerator();
+            var range1 = Ranges.Of(IntRangeStart, IntRangeEnd, x => x + IntRangeStep).GetEnumerator();
+            var range2 = Ranges.Of(DoubleRangeStart, DoubleRangeEnd, x => x + DoubleRangeStep).GetEnumerator();
+
+            Assert.False(emptyRange.MoveNext());
+
+            for (var i = IntRangeStart; i < IntRangeEnd; i += IntRangeStep)
             {
-                Assert.True(range1.MoveNext());
+                Assert.AreEqual(range1.Current, i);
+                if (i + IntRangeStep < IntRangeEnd) Assert.True(range1.MoveNext());
             }
+
+            Assert.False(range1.MoveNext());
+
+            for (var i = DoubleRangeStart; i < DoubleRangeEnd; i += DoubleRangeStep)
+            {
+                Assert.AreEqual(range2.Current, i);
+                if (i + DoubleRangeStep < DoubleRangeEnd) Assert.True(range2.MoveNext());
+            }
+
+            Assert.False(range2.MoveNext());
+            emptyRange.Dispose();
+            range1.Dispose();
+            range2.Dispose();
         }
 
-        Assert.False(range1.MoveNext());
-
-        for (double i = DoubleRangeStart; i < DoubleRangeEnd; i += DoubleRangeStep)
+        [Test]
+        public void TestOfIntegerWithStep()
         {
-            Assert.AreEqual(range2.Current, i);
-            if (i + DoubleRangeStep < DoubleRangeEnd)
+            var emptyRange = Ranges.Of(IntRangeStart, IntRangeStart, IntRangeStep).GetEnumerator();
+            var range1 = Ranges.Of(IntRangeStart, IntRangeEnd, IntRangeStep).GetEnumerator();
+
+            Assert.False(emptyRange.MoveNext());
+
+            for (var i = IntRangeStart; i < IntRangeEnd; i += IntRangeStep)
             {
-                Assert.True(range2.MoveNext());
+                Assert.AreEqual(range1.Current, i);
+                if (i + IntRangeStep < IntRangeEnd) Assert.True(range1.MoveNext());
             }
+
+            Assert.False(range1.MoveNext());
+            emptyRange.Dispose();
+            range1.Dispose();
         }
 
-        Assert.False(range2.MoveNext());
-        emptyRange.Dispose();
-        range1.Dispose();
-        range2.Dispose();
-    }
-
-    [Test]
-    public void TestOfIntegerWithStep()
-    {
-        var emptyRange = Ranges.Of(IntRangeStart, IntRangeStart, IntRangeStep).GetEnumerator();
-        var range1 = Ranges.Of(IntRangeStart, IntRangeEnd, IntRangeStep).GetEnumerator();
-
-        Assert.False(emptyRange.MoveNext());
-        
-        for (int i = IntRangeStart; i < IntRangeEnd; i += IntRangeStep)
+        [Test]
+        public void TestOfDouble()
         {
-            Assert.AreEqual(range1.Current, i);
-            if (i + IntRangeStep < IntRangeEnd)
+            var range = Ranges.Of(DoubleRangeStart, DoubleRangeEnd, DoubleRangeStep).GetEnumerator();
+
+            for (var i = DoubleRangeStart; i < DoubleRangeEnd; i += DoubleRangeStep)
             {
-                Assert.True(range1.MoveNext());
+                Assert.AreEqual(range.Current, i);
+                if (i + DoubleRangeStep < DoubleRangeEnd) Assert.True(range.MoveNext());
             }
+
+            Assert.False(range.MoveNext());
+
+            range.Dispose();
         }
-
-        Assert.False(range1.MoveNext());
-        emptyRange.Dispose();
-        range1.Dispose();
-    }
-
-    [Test]
-    public void TestOfDouble()
-    {
-        var range = Ranges.Of(DoubleRangeStart, DoubleRangeEnd, DoubleRangeStep).GetEnumerator();
-        
-        for (double i = DoubleRangeStart; i < DoubleRangeEnd; i += DoubleRangeStep)
-        {
-            Assert.AreEqual(range.Current, i);
-            if (i + DoubleRangeStep < DoubleRangeEnd)
-            {
-                Assert.True(range.MoveNext());
-            }
-        }
-
-        Assert.False(range.MoveNext());
-        
-        range.Dispose();
     }
 }
