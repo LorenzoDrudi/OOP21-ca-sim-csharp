@@ -6,6 +6,8 @@ namespace Zama.Wator
     {
         private const int MinHealth = 0;
         private const int MaxHealth = 10;
+        private const int PreyHeal = 1;
+        private const int PredHeal = 5;
 
         private int _health;
 
@@ -66,6 +68,19 @@ namespace Zama.Wator
             Health -= IsDead ? 0 : 1;
         }
 
+        /// <summary>
+        /// Heals the <see cref="WatorCell"/> if health isn't at
+        /// maximum.
+        /// </summary>
+        public void Heal()
+        {
+            if (State == WatorCellState.Dead)
+                return;
+            Health += State == WatorCellState.Prey ? PreyHeal : PredHeal;
+            var overflow = Health > MaxHealth ? Health - MaxHealth : 0;
+            Health -= overflow;
+        }
+        
         /// <summary>
         /// Returns the <see cref="WatorCell"/> that will be left
         /// behind after a movement and changes health accordingly.
