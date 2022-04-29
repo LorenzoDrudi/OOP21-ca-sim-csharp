@@ -89,7 +89,7 @@ namespace Zama.Wator
         ///         if the calling cell can reproduce, <see cref="WatorCellState.Dead"/>
         ///         otherwise.</returns>
         /// <exception cref="InvalidOperationException"></exception>
-        public WatorCell reproduce()
+        public WatorCell Reproduce()
         {
             if (Health == MaxHealth)
             {
