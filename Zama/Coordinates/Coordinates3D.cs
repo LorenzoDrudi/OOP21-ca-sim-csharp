@@ -17,6 +17,12 @@ namespace Zama.Coordinates
         /// </summary>
         public int Z { get; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Coordinates3D"/> class.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="z"></param>
         public Coordinates3D(int x, int y, int z)
         {
             X = x;
