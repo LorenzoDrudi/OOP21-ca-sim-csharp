@@ -4,8 +4,17 @@ namespace Zama.Coordinates
 {
     public class Coordinates3D : ICoordinates<int>
     {
+        /// <summary>
+        /// The X coordinate.
+        /// </summary>
         public int X { get; }
+        /// <summary>
+        /// The Y coordinate.
+        /// </summary>
         public int Y { get; }
+        /// <summary>
+        /// The Z coordinate.
+        /// </summary>
         public int Z { get; }
 
         public Coordinates3D(int x, int y, int z)
