@@ -24,7 +24,7 @@ namespace Drudi.AbstractionUtils
             TGrid grid) where TCell:AbstractCell<TState>
         {
             return CoordinatesUtil.Get2DNeighbors(cellPair.Item1)
-                //.Where(coord => grid.isCoordValid(coord))
+                //.Where(coord => grid.isCoordValid(coord)) //TODO
                 .Select(coord => new Tuple<Coordinates2D, int>(coord, 0))
                 .ToList();
         }
@@ -44,7 +44,7 @@ namespace Drudi.AbstractionUtils
             return new List<Coordinates2D> { CoordinatesUtil.Of(1, 0), CoordinatesUtil.Of(0, 1), CoordinatesUtil.Of(0, -1), CoordinatesUtil.Of(-1, 0),
                     CoordinatesUtil.Of(1, 1), CoordinatesUtil.Of(-1, 1), CoordinatesUtil.Of(1, -1), CoordinatesUtil.Of(-1, -1)}
                 .Select(n => n + cellPair.Item1)
-                //.Where(coord => grid.isCoordValid(coord))
+                //.Where(coord => grid.isCoordValid(coord)) //TODO
                 .Select(coord => new Tuple<Coordinates2D, int>(coord, 0))
                 .ToList();
         }
@@ -62,7 +62,7 @@ namespace Drudi.AbstractionUtils
             TGrid grid) where TValue:AbstractCell<TState>
         {
             return CoordinatesUtil.Get3DNeighbors(cellPair.Item1)
-                //.Where(coord => grid.isCoordValid(coord))
+                //.Where(coord => grid.isCoordValid(coord)) //TODO
                 .Select(coord => new Tuple<Coordinates3D, int>(coord, 0))
                 .ToList();
         }
