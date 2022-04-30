@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanzani", "Sanzani\Sanzani.csproj", "{F0610A75-43BF-4CE5-909E-60C5D5BED81A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zama", "Zama\Zama.csproj", "{4E98E617-BD22-4D33-8918-17F310DA779E}"
+EndProjetc
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drudi", "Drudi\Drudi.csproj", "{B591C4E3-DF0B-446E-BC13-8AE09ACC6B2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +20,9 @@ Global
 		{4E98E617-BD22-4D33-8918-17F310DA779E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E98E617-BD22-4D33-8918-17F310DA779E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E98E617-BD22-4D33-8918-17F310DA779E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B591C4E3-DF0B-446E-BC13-8AE09ACC6B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B591C4E3-DF0B-446E-BC13-8AE09ACC6B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B591C4E3-DF0B-446E-BC13-8AE09ACC6B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B591C4E3-DF0B-446E-BC13-8AE09ACC6B2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
