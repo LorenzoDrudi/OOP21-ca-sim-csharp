@@ -23,7 +23,7 @@ namespace Zama.Coordinates
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <param name="z"></param>
-        public Coordinates3D(int x, int y, int z)
+        internal Coordinates3D(int x, int y, int z)
         {
             X = x;
             Y = y;

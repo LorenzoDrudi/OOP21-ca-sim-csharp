@@ -18,7 +18,7 @@ namespace Zama.Coordinates
         /// </summary>
         /// <param name="x">the x value of the coordinate</param>
         /// <param name="y">the y value of the coordinate</param>
-        public Coordinates2D(int x, int y)
+        internal Coordinates2D(int x, int y)
         {
             X = x;
             Y = y;
