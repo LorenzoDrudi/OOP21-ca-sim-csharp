@@ -31,7 +31,7 @@ namespace Drudi.Test
         public void CellStatsTest()
         {
             Assert.AreEqual(CellStats, Stats.CellStats);
-            Assert.AreEqual(CellStats.Values, Stats.CellStats[CoDiCellState.Axon]);
+            Assert.AreEqual(CellStats[CoDiCellState.Axon], Stats.CellStats[CoDiCellState.Axon]);
         }
     }
 }
