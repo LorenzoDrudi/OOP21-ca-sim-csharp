@@ -2,7 +2,7 @@ using System;
 
 namespace Zama.Wator
 {
-    public class WatorCell
+    public class WatorCell : AbstractCell<WatorCellState>
     {
         private const int MinHealth = 0;
         private const int MaxHealth = 10;
@@ -16,13 +16,10 @@ namespace Zama.Wator
         /// </summary>
         /// <param name="state">the <see cref="WatorCellState"/> of the cell</param>
         /// <param name="health">the health of the cell</param>
-        public WatorCell(WatorCellState state, int health)
+        public WatorCell(WatorCellState state, int health) : base(state)
         {
-            State = state;
             Health = health;
         }
-        
-        public WatorCellState State { get; private set; }
         
         /// <summary>
         /// The health of the <see cref="WatorCell"/>.

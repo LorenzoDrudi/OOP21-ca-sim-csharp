@@ -12,9 +12,9 @@ namespace Zama.Test
         private const int PreyHeal = 1;
         private const int PredHeal = 5;
 
-        private WatorCell GetPrey() => new WatorCell(WatorCellState.Prey, PreyHeal);
-        private WatorCell GetPred() => new WatorCell(WatorCellState.Predator, PreyHeal);
-        private WatorCell GetDead() => new WatorCell(WatorCellState.Dead, MinHealth);
+        private static WatorCell GetPrey() => new WatorCell(WatorCellState.Prey, PreyHeal);
+        private static WatorCell GetPred() => new WatorCell(WatorCellState.Predator, PreyHeal);
+        private static WatorCell GetDead() => new WatorCell(WatorCellState.Dead, MinHealth);
 
         [Test]
         public void TestHeal()
