@@ -4,7 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanzani", "Sanzani\Sanzani.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zama", "Zama\Zama.csproj", "{4E98E617-BD22-4D33-8918-17F310DA779E}"
 EndProjetc
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drudi", "Drudi\Drudi.csproj", "{B591C4E3-DF0B-446E-BC13-8AE09ACC6B2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chiasserini", "Chiasserini\Chiasserini.csproj", "{4777B0A6-6B5F-4931-9C67-A7CF3E7F4D04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +27,9 @@ Global
 		{B591C4E3-DF0B-446E-BC13-8AE09ACC6B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B591C4E3-DF0B-446E-BC13-8AE09ACC6B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B591C4E3-DF0B-446E-BC13-8AE09ACC6B2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4777B0A6-6B5F-4931-9C67-A7CF3E7F4D04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4777B0A6-6B5F-4931-9C67-A7CF3E7F4D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4777B0A6-6B5F-4931-9C67-A7CF3E7F4D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4777B0A6-6B5F-4931-9C67-A7CF3E7F4D04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
