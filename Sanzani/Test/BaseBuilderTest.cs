@@ -58,7 +58,7 @@ namespace Sanzani.Test
                     .TypeOf<InvalidOperationException>()
                     .With
                     .Property("Message")
-                    .EqualTo("testFunc has been called twice."));
+                    .EqualTo("TestFunc has been called twice."));
         }
 
         private class TestRegisterCallClass
