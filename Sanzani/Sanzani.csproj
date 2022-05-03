@@ -1,10 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <ImplicitUsings>disable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        <LangVersion>8</LangVersion>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
         <OutputType>Library</OutputType>
     </PropertyGroup>
 
