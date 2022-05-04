@@ -5,7 +5,7 @@ namespace Zama.Coordinates
     public class Coordinates2D : ICoordinates<int>
     {
 
-        private readonly Tuple<int, int> _values;
+        private readonly (int, int) _values;
         
         /// <summary>
         /// The X coordinate value.
@@ -24,7 +24,7 @@ namespace Zama.Coordinates
         /// <param name="y">the y value of the coordinate</param>
         internal Coordinates2D(int x, int y)
         {
-            _values = new Tuple<int, int>(x, y);
+            _values = (x, y);
         }
 
         public override string ToString()
