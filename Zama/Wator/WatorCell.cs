@@ -16,10 +16,7 @@ namespace Zama.Wator
         /// </summary>
         /// <param name="state">the <see cref="WatorCellState"/> of the cell</param>
         /// <param name="health">the health of the cell</param>
-        public WatorCell(WatorCellState state, int health) : base(state)
-        {
-            Health = health;
-        }
+        public WatorCell(WatorCellState state, int health) : base(state) => Health = health;
         
         /// <summary>
         /// The health of the <see cref="WatorCell"/>.
@@ -88,23 +85,18 @@ namespace Zama.Wator
         /// <exception cref="InvalidOperationException"></exception>
         public WatorCell Reproduce()
         {
-            if (Health == MaxHealth)
+            if (Health != MaxHealth) return new WatorCell(WatorCellState.Dead, MinHealth);
+            switch (State)
             {
-                switch (State)
-                {
-                    case WatorCellState.Prey:
-                        Health = MinHealth + 1;
-                        return new WatorCell(State, MinHealth + 1);
-                    case WatorCellState.Predator:
-                        Health = MaxHealth / 2;
-                        return new WatorCell(State, MaxHealth / 2);
-                    default:
-                        throw new InvalidOperationException($"The state {State} has no reproduce operation.");
-                }
-            }
-            else
-            {
-                return new WatorCell(WatorCellState.Dead, MinHealth);
+                case WatorCellState.Prey:
+                    Health = MinHealth + 1;
+                    return new WatorCell(State, MinHealth + 1);
+                case WatorCellState.Predator:
+                    Health = MaxHealth / 2;
+                    return new WatorCell(State, MaxHealth / 2);
+                case WatorCellState.Dead:
+                default:
+                    throw new InvalidOperationException($"The state {State} has no reproduce operation.");
             }
         }
 
