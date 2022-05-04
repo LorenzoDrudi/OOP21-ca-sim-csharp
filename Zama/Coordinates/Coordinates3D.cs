@@ -4,18 +4,23 @@ namespace Zama.Coordinates
 {
     public class Coordinates3D : ICoordinates<int>
     {
+
+        private readonly Tuple<int, int, int> _values;
+
         /// <summary>
         /// The X coordinate.
         /// </summary>
-        public int X { get; }
+        public int X => _values.Item1;
+
         /// <summary>
         /// The Y coordinate.
         /// </summary>
-        public int Y { get; }
+        public int Y => _values.Item2;
+
         /// <summary>
         /// The Z coordinate.
         /// </summary>
-        public int Z { get; }
+        public int Z => _values.Item3;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Coordinates3D"/> class.
@@ -25,9 +30,7 @@ namespace Zama.Coordinates
         /// <param name="z"></param>
         internal Coordinates3D(int x, int y, int z)
         {
-            X = x;
-            Y = y;
-            Z = z;
+            _values = new Tuple<int, int, int>(x, y, z);
         }
         
         public override string ToString() =>
