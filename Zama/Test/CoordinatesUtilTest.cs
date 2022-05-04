@@ -86,7 +86,8 @@ namespace Zama.Test
         [Test]
         public void TestGet3DNeighbors()
         {
-            Assert.AreEqual(Neighbors3D.Select(x => x + BottomRight3D), CoordinatesUtil.Get3DNeighbors(BottomRight3D));
+            Assert.AreEqual(Neighbors3D.Select(x => x + BottomRight3D),
+                CoordinatesUtil.Get3DNeighbors(BottomRight3D));
         }
     }
 }
