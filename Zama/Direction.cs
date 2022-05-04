@@ -13,7 +13,7 @@ namespace Zama
         /// <summary>
         /// Returns an array containing all the <see cref="Direction"/>s.
         /// </summary>
-        public static Direction[] Values { get; } = new[] { North, East, South, West };
+        public static Direction[] Values { get; } = { North, East, South, West };
 
         /// <summary>
         /// Movement information of the <see cref="Direction"/>.
