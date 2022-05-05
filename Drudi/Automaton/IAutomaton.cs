@@ -1,21 +1,26 @@
+using Chiasserini.Grid;
+using Drudi.Cell;
+using Drudi.Stats;
+using Zama.Coordinates;
+
 namespace Drudi.Automaton
 {
     /// <summary>
     /// An interface which describe an <c>Automaton</c>.
     /// </summary>
     /// <typeparam name="TState">The states of the cells.</typeparam>
-    /// <typeparam name="TGrid">The <see cref="Cell"/> implementation used by the <c>Automaton.</c></typeparam>
-    public interface IAutomaton<TState, out TGrid>
+    /// <typeparam name="TCell">The cell implementation used by the Automaton.</typeparam>
+    public interface IAutomaton<TCell, TState> where TCell:AbstractCell<TState>
     {
         /// <summary>
         /// Get the grid describing the current <c>Automaton</c> state.
         /// </summary>
-        public TGrid Grid { get; }
+        public IGrid<Coordinates2D, TCell> Grid { get; }
 
         /// <summary>
-        /// Get the <see cref="IStats"/> about the <c>Automaton</c>.
+        /// Get the <see cref="IStats{T}"/> about the <c>Automaton</c>.
         /// </summary>
-        //public Stats<TState> Stats { get;  }
+        public IStats<TState> Stats { get;  }
 
         /// <summary>
         /// Returns true if the <c>Automaton</c> can do a new step.
@@ -27,6 +32,6 @@ namespace Drudi.Automaton
         /// Compute and return the new state of the <c>Automaton.</c>
         /// </summary>
         /// <returns>The new state of the <c>Automaton.</c></returns>
-        public TGrid Next();
+        public IGrid<Coordinates2D, TCell> Next();
     }
 }

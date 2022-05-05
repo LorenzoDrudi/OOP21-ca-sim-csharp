@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using Optional;
+using Optional.Linq;
+using Optional.Unsafe;
 using Sanzani.States;
 
 namespace Drudi.Cell.CoDiCell
@@ -42,6 +44,14 @@ namespace Drudi.Cell.CoDiCell
             this.NeighborsPreviousInput = neighborsPreviousInput;
             this.Gate = gate;
         }
+
+        /// <summary>
+        /// Return the opposite <see cref="CoDiDirection"/> to the gate of the cell.
+        /// </summary>
+        /// <returns>The opposite direction to the gate.</returns>
+        public Option<CoDiDirection> GetOppositeToGate() => Gate.HasValue
+            ? Option.Some(CoDiDirectionUtils.GetOppositeDirection(Gate.ValueOrFailure()))
+            : Option.None<CoDiDirection>();
 
         /// <summary>
         /// Return the value contained in the <c>direction</c> take as input,

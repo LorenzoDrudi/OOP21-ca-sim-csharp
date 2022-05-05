@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Chiasserini.Grid;
 using Drudi.Cell;
 using Zama.Coordinates;
 
@@ -17,15 +18,14 @@ namespace Drudi.AbstractionUtils
         /// <param name="cellPair">A <see cref="Tuple"/> <see cref="Coordinates2D"/> + <see cref="AbstractCell{T}"/> implementation;</param>
         /// <param name="grid">The 2D grid where search the neighbors.</param>
         /// <typeparam name="TCell">The <see cref="AbstractCell{T}"/> implementation;</typeparam>
-        /// <typeparam name="TGrid">The grid;</typeparam>
         /// <typeparam name="TState">The states of the cell.</typeparam>
         /// <returns></returns>
-        public static List<Tuple<Coordinates2D, int>> Neighbors2DFunction<TCell, TGrid, TState>(Tuple<Coordinates2D, TCell> cellPair, 
-            TGrid grid) where TCell:AbstractCell<TState>
+        public static List<Tuple<Coordinates2D, TCell>> Neighbors2DFunction<TCell, TState>(Tuple<Coordinates2D, TCell> cellPair, 
+            IGrid<Coordinates2D, TCell> grid) where TCell:AbstractCell<TState>
         {
             return CoordinatesUtil.Get2DNeighbors(cellPair.Item1)
-                //.Where(coord => grid.isCoordValid(coord)) //TODO
-                .Select(coord => new Tuple<Coordinates2D, int>(coord, 0))
+                .Where(grid.IsCoordValid)
+                .Select(coord => new Tuple<Coordinates2D, TCell>(coord, grid.Get(coord)))
                 .ToList();
         }
         
@@ -34,18 +34,17 @@ namespace Drudi.AbstractionUtils
         /// </summary>
         /// <param name="cellPair">A <see cref="Tuple"/> <see cref="Coordinates2D"/> + <see cref="AbstractCell{T}"/> implementation;</param>
         /// <param name="grid">The 2D grid where search the neighbors.</param>
-        /// <typeparam name="TValue">The <see cref="AbstractCell{T}"/> implementation;</typeparam>
-        /// <typeparam name="TGrid">The grid;</typeparam>
+        /// <typeparam name="TCell">The <see cref="AbstractCell{T}"/> implementation;</typeparam>
         /// <typeparam name="TState">The states of the cell.</typeparam>
         /// <returns></returns>
-        public static List<Tuple<Coordinates2D, int>> MooreNeighborsFunction<TValue, TGrid, TState>(Tuple<Coordinates2D, TValue> cellPair, 
-            TGrid grid) where TValue:AbstractCell<TState>
+        public static List<Tuple<Coordinates2D, TCell>> MooreNeighborsFunction<TCell, TState>(Tuple<Coordinates2D, TCell> cellPair, 
+            IGrid<Coordinates2D, TCell> grid) where TCell:AbstractCell<TState>
         {
             return new List<Coordinates2D> { CoordinatesUtil.Of(1, 0), CoordinatesUtil.Of(0, 1), CoordinatesUtil.Of(0, -1), CoordinatesUtil.Of(-1, 0),
                     CoordinatesUtil.Of(1, 1), CoordinatesUtil.Of(-1, 1), CoordinatesUtil.Of(1, -1), CoordinatesUtil.Of(-1, -1)}
                 .Select(n => n + cellPair.Item1)
-                //.Where(coord => grid.isCoordValid(coord)) //TODO
-                .Select(coord => new Tuple<Coordinates2D, int>(coord, 0))
+                .Where(grid.IsCoordValid)
+                .Select(coord => new Tuple<Coordinates2D, TCell>(coord, grid.Get(coord)))
                 .ToList();
         }
         
@@ -54,16 +53,15 @@ namespace Drudi.AbstractionUtils
         /// </summary>
         /// <param name="cellPair">A <see cref="Tuple"/> <see cref="Coordinates3D"/> + <see cref="AbstractCell{T}"/> implementation;</param>
         /// <param name="grid">The 3D grid where search the neighbors.</param>
-        /// <typeparam name="TValue">The <see cref="AbstractCell{T}"/> implementation;</typeparam>
-        /// <typeparam name="TGrid">The grid;</typeparam>
+        /// <typeparam name="TCell">The <see cref="AbstractCell{T}"/> implementation;</typeparam>
         /// <typeparam name="TState">The states of the cell.</typeparam>
         /// <returns></returns>
-        public static List<Tuple<Coordinates3D, int>> Neighbors3DFunction<TValue, TGrid, TState>(Tuple<Coordinates3D, TValue> cellPair, 
-            TGrid grid) where TValue:AbstractCell<TState>
+        public static List<Tuple<Coordinates3D, TCell>> Neighbors3DFunction<TCell, TState>(Tuple<Coordinates3D, TCell> cellPair, 
+            IGrid<Coordinates3D, TCell> grid) where TCell:AbstractCell<TState>
         {
             return CoordinatesUtil.Get3DNeighbors(cellPair.Item1)
-                //.Where(coord => grid.isCoordValid(coord)) //TODO
-                .Select(coord => new Tuple<Coordinates3D, int>(coord, 0))
+                .Where(grid.IsCoordValid) 
+                .Select(coord => new Tuple<Coordinates3D, TCell>(coord, grid.Get(coord)))
                 .ToList();
         }
     }
