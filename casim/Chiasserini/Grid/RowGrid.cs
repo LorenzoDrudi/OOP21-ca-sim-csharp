@@ -6,7 +6,7 @@ using Zama.Coordinates;
 
 namespace casim.Chiasserini.Grid
 {
-    public class RowGrid<T> : IGrid2D<T> where T : class
+    public class RowGrid<T> : IGrid2D<T>
     {
         private readonly int _rows;
         private readonly int _columns;
@@ -27,7 +27,7 @@ namespace casim.Chiasserini.Grid
             return list;
         }
 
-        public void SetRow(int row, int column, List<T> list)
+        public void SetRow(int row, List<T> list)
         {
             if (list.Count != this.Width)
             {
