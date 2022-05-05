@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using Zama.Coordinates;
 
 namespace Zama
@@ -11,21 +11,26 @@ namespace Zama
         public static Direction West { get; } = new Direction(CoordinatesUtil.Of(-1, 0));
 
         /// <summary>
-        /// Returns an array containing all the <see cref="Direction"/>s.
+        /// <see cref="Dictionary{TKey,TValue}"/> of that maps every <see cref="Direction"/>
+        /// to it's left and right directions.
         /// </summary>
-        public static Direction[] Values { get; } = new[] { North, East, South, West };
+        public static readonly Dictionary<Direction, (Direction Left, Direction Right)> TurnMap 
+            = new Dictionary<Direction, (Direction, Direction)> 
+            { 
+                [North] = (West, East),
+                [East] = (North, South),
+                [South] = (East, West),
+                [West] = (South, North)
+            };
 
         /// <summary>
         /// Movement information of the <see cref="Direction"/>.
         /// </summary>
         public Coordinates2D MoveInfo { get; }
-    
-        /// <summary>
-        /// Returns the index of the <see cref="Direction"/> in the
-        /// Values array.
-        /// </summary>
-        public int Ordinal => Array.IndexOf(Values, this);
 
-        private Direction(Coordinates2D moveInfo) => MoveInfo = moveInfo;
+        private Direction(Coordinates2D moveInfo)
+        {
+            MoveInfo = moveInfo;
+        }
     }
 }

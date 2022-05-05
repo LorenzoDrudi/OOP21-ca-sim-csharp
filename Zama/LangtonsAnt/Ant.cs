@@ -32,8 +32,7 @@ namespace Zama.LangtonsAnt
         ///         the ant is on.</param>
         public void Turn(LangtonsAntCellState state)
         {
-            var indexChange = state == LangtonsAntCellState.On ? Direction.Values.Length - 1 : 1;
-            Facing = Direction.Values[(Facing.Ordinal + indexChange) % Direction.Values.Length];
+            Facing = state == LangtonsAntCellState.Off ? Direction.TurnMap[Facing].Right : Direction.TurnMap[Facing].Left;
         }
     }
 }

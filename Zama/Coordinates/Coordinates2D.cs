@@ -4,14 +4,18 @@ namespace Zama.Coordinates
 {
     public class Coordinates2D : ICoordinates<int>
     {
+
+        private readonly (int, int) _values;
+        
         /// <summary>
         /// The X coordinate value.
         /// </summary>
-        public int X { get; }
+        public int X => _values.Item1;
+
         /// <summary>
         /// The Y coordinate value.
         /// </summary>
-        public int Y { get; }
+        public int Y => _values.Item2;
 
         /// <summary>
         ///  Initializes a new instance of the <see cref="Coordinates2D"/> class.
@@ -20,8 +24,7 @@ namespace Zama.Coordinates
         /// <param name="y">the y value of the coordinate</param>
         internal Coordinates2D(int x, int y)
         {
-            X = x;
-            Y = y;
+            _values = (x, y);
         }
 
         public override string ToString()

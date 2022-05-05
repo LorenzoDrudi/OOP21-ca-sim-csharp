@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Linq;
 using Zama.Coordinates;
 
 namespace Chiasserini.Grid
 {
     /// <summary>
-    /// The bidimensional grid.
+    /// The bi-dimensional grid.
     /// </summary>
     /// <typeparam name="T">Type of data contained in IGrid2D.</typeparam>
     public interface IGrid2D<T> : IGrid<Coordinates2D, T>
@@ -31,6 +30,6 @@ namespace Chiasserini.Grid
         /// <param name="mapper">The map function.</param>
         /// <typeparam name="O">The type if the element of the output grid.</typeparam>
         /// <returns></returns>
-        public IGrid2D<O> Map<O>(Func<T, O> mapper);
+        public IGrid2D<O> MapTo<O>(Func<T, O> mapper) where O : class;
     }
 }

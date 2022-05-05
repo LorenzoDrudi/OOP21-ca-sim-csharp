@@ -1,26 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using NUnit.Framework;
 using Zama.Coordinates;
 using Sanzani.RangeUtils;
 
 namespace Chiasserini.Grid
 {
     /// <summary>
-    /// The implementation of Grid2D.
+    /// The implementation of a Grid2D.
     /// </summary>
-    /// <param name="T">Type of data contained in Grid2D.</param>
+    /// <typeparam name="T">Type of data contained in Grid2D.</typeparam>
     public class Grid2D<T> : IGrid2D<T> where T : class
     {
         private readonly int _rows;
         private readonly int _columns;
         
         private List<List<T>> Grid { get; set; }
-
+        public int Height => _rows;
+        public int Width => _columns;
+        
+        
         /// <summary>
-        /// Construct a new Grid2d filled with nulls.
+        /// Construct a new Grid2D filled with nulls.
         /// </summary>
         /// <param name="rows">the number of the rows of the Grid2D</param>
         /// <param name="columns">the number of the columns of the Grid2D</param>
@@ -40,7 +41,8 @@ namespace Chiasserini.Grid
             _columns = columns;
             Grid = Ranges.Of(0, rows).AsQueryable()
                 .Select(x => Ranges.Of(0, columns, 1).AsQueryable()
-                    .Select(y => defaultValue.Invoke()).ToList())
+                .Select(y => defaultValue.Invoke())
+                .ToList())
                 .ToList();
         }
 
@@ -56,13 +58,10 @@ namespace Chiasserini.Grid
             _columns = columns;
             Grid = Ranges.Of(0, rows).AsQueryable()
                 .Select(x => Ranges.Of(0, columns, 1).AsQueryable()
-                    .Select(y => valueFunction.Invoke(CoordinatesUtil.Of(x, y))).ToList())
+                .Select(y => valueFunction.Invoke(CoordinatesUtil.Of(x, y)))
+                .ToList())
                 .ToList();
         }
-
-        public int Width => _columns;
-
-        public int Height => _rows;
 
         public T Get(Coordinates2D coord)
         {
@@ -83,6 +82,7 @@ namespace Chiasserini.Grid
         {
             this.Grid[row][column]=value;
         }
+
         public bool IsCoordValid(Coordinates2D coord)
         {
             return CoordinatesUtil.IsValid(coord, _rows, _columns);
@@ -93,7 +93,7 @@ namespace Chiasserini.Grid
             return Grid.AsQueryable().SelectMany(x => x.AsQueryable());
         }
 
-        public IGrid2D<O> Map<O>(Func<T, O> mapper) where O : class
+        public IGrid2D<O> MapTo<O>(Func<T, O> mapper) where O : class
         {
             return new Grid2D<O>(
                 _rows, 
