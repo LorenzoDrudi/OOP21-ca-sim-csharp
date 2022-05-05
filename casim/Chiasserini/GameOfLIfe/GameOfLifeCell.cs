@@ -1,7 +1,6 @@
-﻿using Sanzani.States;
-using Zama;
+﻿using Drudi.Cell;
 
-namespace Chiasserini.GameOfLIfe
+namespace casim.Chiasserini.GameOfLIfe
 {
     /// <summary>
     /// Cell of Game Of Life.

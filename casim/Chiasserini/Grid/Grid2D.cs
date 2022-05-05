@@ -4,7 +4,7 @@ using System.Linq;
 using Zama.Coordinates;
 using Sanzani.RangeUtils;
 
-namespace Chiasserini.Grid
+namespace casim.Chiasserini.Grid
 {
     /// <summary>
     /// The implementation of a Grid2D.

@@ -1,7 +1,7 @@
 ﻿using System;
 using Zama.Coordinates;
 
-namespace Chiasserini.Grid
+namespace casim.Chiasserini.Grid
 {
     /// <summary>
     /// The 3-dimensional grid.

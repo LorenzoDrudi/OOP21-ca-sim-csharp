@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Chiasserini.Grid;
+using casim.Chiasserini.Grid;
 using NUnit.Framework;
 using Zama.Coordinates;
 
-namespace Chiasserini.Test
+namespace casim.Chiasserini.Test
 {
     /// <summary>
     /// Test for Grid3D.

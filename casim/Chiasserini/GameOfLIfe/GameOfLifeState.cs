@@ -1,4 +1,4 @@
-﻿namespace Chiasserini.GameOfLIfe
+﻿namespace casim.Chiasserini.GameOfLIfe
 {
     public enum GameOfLifeState
     {
