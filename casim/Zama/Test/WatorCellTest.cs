@@ -1,6 +1,6 @@
 using System;
-using NUnit.Framework;
 using Zama.Wator;
+using NUnit.Framework;
 
 namespace Zama.Test
 {
