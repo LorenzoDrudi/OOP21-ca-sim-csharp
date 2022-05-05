@@ -10,7 +10,7 @@ namespace Chiasserini.Grid
     /// The implementation of a Grid2D.
     /// </summary>
     /// <typeparam name="T">Type of data contained in Grid2D.</typeparam>
-    public class Grid2D<T> : IGrid2D<T> where T : class
+    public class Grid2D<T> : IGrid2D<T>
     {
         private readonly int _rows;
         private readonly int _columns;
@@ -18,17 +18,7 @@ namespace Chiasserini.Grid
         private List<List<T>> Grid { get; set; }
         public int Height => _rows;
         public int Width => _columns;
-        
-        
-        /// <summary>
-        /// Construct a new Grid2D filled with nulls.
-        /// </summary>
-        /// <param name="rows">the number of the rows of the Grid2D</param>
-        /// <param name="columns">the number of the columns of the Grid2D</param>
-        internal Grid2D(int rows, int columns) : this(rows, columns, (x) => null) 
-        {
-        }
-        
+
         /// <summary>
         /// Construct a new Grid2D with a function that maps coordinates to values.
         /// </summary>

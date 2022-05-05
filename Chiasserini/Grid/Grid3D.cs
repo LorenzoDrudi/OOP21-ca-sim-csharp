@@ -10,7 +10,7 @@ namespace Chiasserini.Grid
     /// The implementation of a Grid3D.
     /// </summary>
     /// <typeparam name="T">Type of data contained in Grid3D.</typeparam>
-    public class Grid3D<T> : IGrid3D<T> where T : class
+    public class Grid3D<T> : IGrid3D<T>
     {
         private readonly int _rows;
         private readonly int _columns;
@@ -20,17 +20,7 @@ namespace Chiasserini.Grid
         public int Height => _rows;
         public int Width => _columns;
         public int Depth => _depth;
-        
-        /// <summary>
-        /// Construct a new Grid3D filled with nulls.
-        /// </summary>
-        /// <param name="rows">the number of the rows of the Grid3D</param>
-        /// <param name="columns">the number of the rows of the Grid3D</param>
-        /// <param name="depth">the depth of the Grid3D</param>
-        internal Grid3D(int rows, int columns, int depth) : this(rows, columns, depth, (x) => null) 
-        {
-        }
-        
+
         /// <summary>
         /// Construct a new Grid3D with a function that maps coordinates to values.
         /// </summary>
