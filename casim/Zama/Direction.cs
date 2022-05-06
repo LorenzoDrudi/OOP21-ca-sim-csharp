@@ -11,7 +11,7 @@ namespace Zama
         public static Direction West { get; } = new Direction(CoordinatesUtil.Of(-1, 0));
 
         /// <summary>
-        /// <see cref="Dictionary{TKey,TValue}"/> of that maps every <see cref="Direction"/>
+        /// <see cref="Dictionary{TKey,TValue}"/> that maps every <see cref="Direction"/>
         /// to it's left and right directions.
         /// </summary>
         public static readonly Dictionary<Direction, (Direction Left, Direction Right)> TurnMap 
