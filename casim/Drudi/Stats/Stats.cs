@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Drudi.Stats
+namespace casim.Drudi.Stats
 {
     public class Stats<T>: IStats<T>
     {

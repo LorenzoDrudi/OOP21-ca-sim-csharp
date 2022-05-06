@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Drudi.Stats
+namespace casim.Drudi.Stats
 {
     /// <summary>
     /// Interface used to describe the Automaton's stats.

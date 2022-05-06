@@ -1,8 +1,8 @@
+using casim.Drudi.Cell.CoDi;
 using casim.Zama.Coordinates;
-using Drudi.Cell.CoDiCell;
 using NUnit.Framework;
 
-namespace Drudi.Test
+namespace casim.Drudi.Test
 {
     /// <summary>
     /// Class test for <see cref="CoDiDirectionUtils"/>.

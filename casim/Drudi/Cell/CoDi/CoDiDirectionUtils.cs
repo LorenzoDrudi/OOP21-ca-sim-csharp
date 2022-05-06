@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using casim.Zama.Coordinates;
 
-namespace Drudi.Cell.CoDiCell
+namespace casim.Drudi.Cell.CoDi
 {
     /// <summary>
     /// Utility method for <see cref="CoDiDirection"/> class.

@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using Optional;
-using Optional.Linq;
 using Optional.Unsafe;
 using Sanzani.States;
 
-namespace Drudi.Cell.CoDiCell
+namespace casim.Drudi.Cell.CoDi
 {
     public class CoDiCell : AbstractCell<CoDiCellState>
     {

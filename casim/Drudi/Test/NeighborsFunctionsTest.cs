@@ -1,14 +1,14 @@
 using System;
 using System.Linq;
+using casim.Chiasserini.Grid;
+using casim.Drudi.AbstractionUtils;
+using casim.Drudi.Cell.CoDi;
+using casim.Drudi.Cell.CoDi.Builder;
 using casim.Zama.Coordinates;
-using Chiasserini.Grid;
-using Drudi.AbstractionUtils;
-using Drudi.Cell.CoDiCell;
-using Drudi.Cell.CoDiCell.Builder;
 using NUnit.Framework;
 using Sanzani.States;
 
-namespace Drudi.Test
+namespace casim.Drudi.Test
 {
     /// <summary>
     /// Test class for <see cref="NeighborsFunctions"/>.

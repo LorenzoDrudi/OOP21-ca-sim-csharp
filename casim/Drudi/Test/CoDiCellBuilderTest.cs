@@ -1,11 +1,11 @@
 using System;
 using System.Linq;
-using Drudi.Cell.CoDiCell;
-using Drudi.Cell.CoDiCell.Builder;
+using casim.Drudi.Cell.CoDi;
+using casim.Drudi.Cell.CoDi.Builder;
 using NUnit.Framework;
 using Sanzani.States;
 
-namespace Drudi.Test
+namespace casim.Drudi.Test
 {
     /// <summary>
     /// Test class for <see cref="CoDiCellBuilder"/>.

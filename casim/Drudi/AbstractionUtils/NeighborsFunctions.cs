@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using casim.Chiasserini.Grid;
+using casim.Drudi.Cell;
 using casim.Zama.Coordinates;
-using Chiasserini.Grid;
-using Drudi.Cell;
 
-namespace Drudi.AbstractionUtils
+namespace casim.Drudi.AbstractionUtils
 {
     /// <summary>
     /// Utility class for the standard neighbors functions.

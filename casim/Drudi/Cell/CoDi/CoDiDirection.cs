@@ -1,4 +1,4 @@
-namespace Drudi.Cell.CoDiCell
+namespace casim.Drudi.Cell.CoDi
 {
     /// <summary>
     /// Enumeration containing all the neighbors directions.

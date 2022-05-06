@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using Drudi.Stats;
+using casim.Drudi.Stats;
 using NUnit.Framework;
 using Sanzani.States;
 
-namespace Drudi.Test
+namespace casim.Drudi.Test
 {
     /// <summary>
     /// Test class for <see cref="Stats"/>

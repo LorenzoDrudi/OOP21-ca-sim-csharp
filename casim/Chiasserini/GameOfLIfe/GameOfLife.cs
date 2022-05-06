@@ -1,5 +1,5 @@
 ﻿using casim.Chiasserini.Grid;
-using Drudi.Automaton;
+using casim.Drudi.Automaton;
 
 namespace casim.Chiasserini.GameOfLIfe
 {

@@ -1,4 +1,4 @@
-﻿using Drudi.Cell;
+﻿using casim.Drudi.Cell;
 
 namespace casim.Chiasserini.GameOfLIfe
 {

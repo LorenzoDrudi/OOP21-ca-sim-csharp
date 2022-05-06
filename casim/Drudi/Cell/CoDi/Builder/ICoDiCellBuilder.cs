@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Optional;
 using Sanzani.States;
 
-namespace Drudi.Cell.CoDiCell.Builder
+namespace casim.Drudi.Cell.CoDi.Builder
 {
     /// <summary>
     /// A builder for <see cref="CoDiCell"/>

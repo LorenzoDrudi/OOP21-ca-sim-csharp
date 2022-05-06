@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
+using casim.Chiasserini.Grid;
+using casim.Drudi.Cell;
+using casim.Drudi.Stats;
 using casim.Zama.Coordinates;
-using Chiasserini.Grid;
-using Drudi.Cell;
-using Drudi.Stats;
 
-namespace Drudi.Automaton
+namespace casim.Drudi.Automaton
 {
     public abstract class Automaton<TCell, TState> : IAutomaton<TCell, TState> where TCell : AbstractCell<TState>
     {

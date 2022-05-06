@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <PackageReference Include="NUnit" Version="3.13.3" />
+      <PackageReference Include="Optional" Version="4.0.0" />
     </ItemGroup>
 
 </Project>

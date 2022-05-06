@@ -3,7 +3,7 @@ using Optional;
 using Sanzani;
 using Sanzani.States;
 
-namespace Drudi.Cell.CoDiCell.Builder
+namespace casim.Drudi.Cell.CoDi.Builder
 {
     /// <summary>
     /// Implementation of <see cref="ICoDiCellBuilder"/>.

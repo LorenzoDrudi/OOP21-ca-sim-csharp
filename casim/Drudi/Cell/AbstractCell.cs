@@ -1,4 +1,4 @@
-namespace Drudi.Cell
+namespace casim.Drudi.Cell
 {
     /// <summary>
     /// Abstract implementation of ICell.

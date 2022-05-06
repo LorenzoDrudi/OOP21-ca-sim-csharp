@@ -1,9 +1,9 @@
+using casim.Chiasserini.Grid;
+using casim.Drudi.Cell;
+using casim.Drudi.Stats;
 using casim.Zama.Coordinates;
-using Chiasserini.Grid;
-using Drudi.Cell;
-using Drudi.Stats;
 
-namespace Drudi.Automaton
+namespace casim.Drudi.Automaton
 {
     /// <summary>
     /// An interface which describe an <c>Automaton</c>.
