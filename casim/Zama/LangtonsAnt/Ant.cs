@@ -1,6 +1,6 @@
-using Zama.Coordinates;
+using casim.Zama.Coordinates;
 
-namespace Zama.LangtonsAnt
+namespace casim.Zama.LangtonsAnt
 {
     public class Ant
     {

@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using casim.Zama.Coordinates;
 using NUnit.Framework;
-using Zama.Coordinates;
 
-namespace Zama.Test
+namespace casim.Zama.Test
 {
     [TestFixture]
     public class CoordinatesUtilTest

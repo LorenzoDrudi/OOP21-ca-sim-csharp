@@ -1,12 +1,12 @@
 using System;
 using System.Linq;
+using casim.Zama.Coordinates;
 using Chiasserini.Grid;
 using Drudi.AbstractionUtils;
 using Drudi.Cell.CoDiCell;
 using Drudi.Cell.CoDiCell.Builder;
 using NUnit.Framework;
 using Sanzani.States;
-using Zama.Coordinates;
 
 namespace Drudi.Test
 {

@@ -1,5 +1,5 @@
 ﻿using System;
-using Zama.Coordinates;
+using casim.Zama.Coordinates;
 
 namespace casim.Chiasserini.Grid
 {

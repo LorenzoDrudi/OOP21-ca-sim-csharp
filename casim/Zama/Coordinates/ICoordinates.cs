@@ -1,6 +1,6 @@
 using System;
 
-namespace Zama.Coordinates
+namespace casim.Zama.Coordinates
 {
     public interface ICoordinates<T> where T : IComparable<T>
     {

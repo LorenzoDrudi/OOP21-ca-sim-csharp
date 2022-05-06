@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using casim.Zama.Coordinates;
 using Chiasserini.Grid;
 using Drudi.Cell;
-using Zama.Coordinates;
 
 namespace Drudi.AbstractionUtils
 {

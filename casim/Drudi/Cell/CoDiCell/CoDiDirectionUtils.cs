@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Zama.Coordinates;
+using casim.Zama.Coordinates;
 
 namespace Drudi.Cell.CoDiCell
 {

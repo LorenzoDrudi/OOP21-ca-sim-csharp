@@ -1,8 +1,8 @@
+using casim.Zama.Coordinates;
+using casim.Zama.LangtonsAnt;
 using NUnit.Framework;
-using Zama.Coordinates;
-using Zama.LangtonsAnt;
 
-namespace Zama.Test
+namespace casim.Zama.Test
 {
     [TestFixture]
     public class AntTest

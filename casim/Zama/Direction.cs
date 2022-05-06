@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Zama.Coordinates;
+using casim.Zama.Coordinates;
 
-namespace Zama
+namespace casim.Zama
 {
     public class Direction
     {

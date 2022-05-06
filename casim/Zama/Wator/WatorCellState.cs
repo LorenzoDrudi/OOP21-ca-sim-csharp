@@ -1,4 +1,4 @@
-namespace Zama.Wator
+namespace casim.Zama.Wator
 {
     public enum WatorCellState
     {

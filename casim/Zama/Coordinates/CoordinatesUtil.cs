@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Zama.Coordinates
+namespace casim.Zama.Coordinates
 {
     /// <summary>
     /// Ulitily class for <see cref="Coordinates2D"/> and <see cref="Coordinates3D"/>.

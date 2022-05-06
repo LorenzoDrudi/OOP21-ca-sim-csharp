@@ -1,8 +1,8 @@
 using System;
-using Zama.Wator;
+using casim.Zama.Wator;
 using NUnit.Framework;
 
-namespace Zama.Test
+namespace casim.Zama.Test
 {
     [TestFixture]
     public class WatorCellTest

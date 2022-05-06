@@ -1,6 +1,4 @@
-using NUnit.Framework;
-
-namespace Zama.Config
+namespace casim.Zama.Config
 {
     public class BaseConfig
     {

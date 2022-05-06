@@ -1,4 +1,4 @@
-namespace Zama.LangtonsAnt
+namespace casim.Zama.LangtonsAnt
 {
     public enum LangtonsAntCellState
     {

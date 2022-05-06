@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using casim.Chiasserini.Grid;
+using casim.Zama.Coordinates;
 using NUnit.Framework;
-using Zama.Coordinates;
 
 namespace casim.Chiasserini.Test
 {

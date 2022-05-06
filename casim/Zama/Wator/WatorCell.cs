@@ -1,8 +1,7 @@
 using System;
 using Drudi.Cell;
-using Zama.Wator;
 
-namespace Zama.Wator
+namespace casim.Zama.Wator
 {
     public class WatorCell : AbstractCell<WatorCellState>
     {

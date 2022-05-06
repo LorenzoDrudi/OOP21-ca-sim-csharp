@@ -1,4 +1,4 @@
-namespace Zama.Config
+namespace casim.Zama.Config
 {
     public class WrappingConfig : BaseConfig
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Zama.Coordinates
+namespace casim.Zama.Coordinates
 {
     public class Coordinates3D : ICoordinates<int>
     {
