@@ -20,7 +20,6 @@ namespace Sanzani.RangeUtils
         public static IEnumerable<T> Of<T>(
             T startInclusive, T endExclusive, Func<T, T> step) where T : IComparable<T>
         {
-            Console.WriteLine("CIAO: " + startInclusive);
             for (var current = startInclusive; current.CompareTo(endExclusive) < 0; current = step(current))
             {
                 yield return current;
