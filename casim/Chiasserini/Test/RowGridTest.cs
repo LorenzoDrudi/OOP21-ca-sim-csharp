@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using casim.Chiasserini.Grid;
+﻿using casim.Chiasserini.Grid;
 using NUnit.Framework;
 using Sanzani.RangeUtils;
 

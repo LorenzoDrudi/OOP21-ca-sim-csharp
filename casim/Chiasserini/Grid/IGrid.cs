@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace casim.Chiasserini.Grid
+﻿namespace casim.Chiasserini.Grid
 {
     /// <summary>
     /// The grid.

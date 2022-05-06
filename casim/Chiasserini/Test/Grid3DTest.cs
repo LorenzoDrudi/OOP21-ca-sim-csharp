@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using casim.Chiasserini.Grid;
+﻿using casim.Chiasserini.Grid;
 using casim.Zama.Coordinates;
 using NUnit.Framework;
 
