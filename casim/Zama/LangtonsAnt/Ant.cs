@@ -4,7 +4,14 @@ namespace casim.Zama.LangtonsAnt
 {
     public class Ant
     {
-        public Coordinates2D Position { get; set; }
+        /// <summary>
+        /// The position of the <see cref="Ant"/>.
+        /// </summary>
+        public Coordinates2D Position { get; private set; }
+        /// <summary>
+        /// The <see cref="Direction"/> the <see cref="Ant"/>
+        /// is facing.
+        /// </summary>
         public Direction Facing { get; set; }
         
         /// <summary>
