@@ -49,7 +49,7 @@ namespace casim.Chiasserini.Grid
         /// <param name="columns">the number of the column of the Grid3D</param>
         /// <param name="depth">the depth of the Grid3D</param>
         /// <param name="valueFunction">the function that maps coordinates to value.</param>
-        public Grid3D(int rows, int columns, int depth, Func<Coordinates3D, T> valueFunction)
+        private Grid3D(int rows, int columns, int depth, Func<Coordinates3D, T> valueFunction)
         {
             _rows = rows;
             _columns = columns;

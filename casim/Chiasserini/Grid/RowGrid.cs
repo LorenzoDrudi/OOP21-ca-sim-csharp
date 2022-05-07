@@ -11,11 +11,11 @@ namespace casim.Chiasserini.Grid
         private readonly int _rows;
         private readonly int _columns;
         
-        private Grid2D<T> Grid { get; set; }
+        private IGrid2D<T> Grid { get; set; }
         public int Height => _rows;
         public int Width => _columns;
         
-        internal RowGrid(Grid2D<T> grid)
+        internal RowGrid(IGrid2D<T> grid)
         {
             this.Grid = grid;
         }
@@ -23,13 +23,13 @@ namespace casim.Chiasserini.Grid
         public IList<T> GetRow(int row)
         {
             IList<T> list = new List<T>();
-            Ranges.Of(0, this.Width).ToList().ForEach(column => list.Add(this.Get(row, column)));
+            Ranges.Of(0, this.Grid.Width).ToList().ForEach(column => list.Add(this.Get(row, column)));
             return list;
         }
 
         public void SetRow(int row, List<T> list)
         {
-            if (list.Count != this.Width)
+            if (list.Count != this.Grid.Width)
             {
                 throw new ArgumentException("Wrong list size");
             }
