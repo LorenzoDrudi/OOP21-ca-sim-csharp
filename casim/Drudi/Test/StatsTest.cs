@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using casim.Drudi.Stats;
+using casim.Sanzani.States;
 using NUnit.Framework;
-using Sanzani.States;
 
 namespace casim.Drudi.Test
 {

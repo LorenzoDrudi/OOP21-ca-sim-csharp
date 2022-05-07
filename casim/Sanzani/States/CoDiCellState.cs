@@ -1,4 +1,4 @@
-namespace Sanzani.States 
+namespace casim.Sanzani.States 
 {
     /// <summary>
     ///     The states that the CoDi automaton can have.

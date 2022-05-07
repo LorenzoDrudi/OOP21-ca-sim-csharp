@@ -1,6 +1,8 @@
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace Sanzani
+namespace casim.Sanzani
 {
     /// <summary>
     ///     Abstract class that describes a Builder.

@@ -1,6 +1,6 @@
-using Sanzani.States;
+using casim.Sanzani.States;
 
-namespace Sanzani.StateColorMapper
+namespace casim.Sanzani.StateColorMapper
 {
     /// <summary>
     ///     Factory for IStateColorMapper configuration.

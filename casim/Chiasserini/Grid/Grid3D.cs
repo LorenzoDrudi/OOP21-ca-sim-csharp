@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using casim.Sanzani.RangeUtils;
 using casim.Zama.Coordinates;
-using Sanzani.RangeUtils;
 
 namespace casim.Chiasserini.Grid
 {

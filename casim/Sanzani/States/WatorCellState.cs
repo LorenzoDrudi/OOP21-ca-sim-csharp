@@ -1,4 +1,4 @@
-namespace Sanzani.States
+namespace casim.Sanzani.States
 { 
     /// <summary>
     ///     Enum representing the state of a WatorCell.

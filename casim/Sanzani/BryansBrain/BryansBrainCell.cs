@@ -1,7 +1,7 @@
 using casim.Drudi.Cell;
-using Sanzani.States;
+using casim.Sanzani.States;
 
-namespace Sanzani.BryansBrain
+namespace casim.Sanzani.BryansBrain
 {
     /// <summary>
     /// The Bryan's Brain cell.

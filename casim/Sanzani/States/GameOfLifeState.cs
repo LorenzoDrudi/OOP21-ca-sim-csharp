@@ -1,4 +1,4 @@
-namespace Sanzani.States 
+namespace casim.Sanzani.States 
 {
     /// <summary>
     ///     The enumeration which describes the state of a game of life cell.

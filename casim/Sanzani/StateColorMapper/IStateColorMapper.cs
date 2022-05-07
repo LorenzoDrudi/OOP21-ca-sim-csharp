@@ -1,6 +1,6 @@
 using System.Drawing;
 
-namespace Sanzani.StateColorMapper
+namespace casim.Sanzani.StateColorMapper
 {
     /// <summary>
     ///     A mapper which map to a state a specific Color.
