@@ -1,11 +1,9 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using casim.Sanzani.RangeUtils;
 using NUnit.Framework;
-using Sanzani.RangeUtils;
 
-namespace Sanzani.Test
+namespace casim.Sanzani.Test
 {
     [TestFixture]
     public class RangesTest

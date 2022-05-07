@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using casim.Chiasserini.Grid;
+using casim.Sanzani.RangeUtils;
 using NUnit.Framework;
-using Sanzani.RangeUtils;
 
 namespace casim.Chiasserini.Test
 {

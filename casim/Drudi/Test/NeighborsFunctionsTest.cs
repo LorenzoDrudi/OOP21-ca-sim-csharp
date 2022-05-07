@@ -4,9 +4,9 @@ using casim.Chiasserini.Grid;
 using casim.Drudi.AbstractionUtils;
 using casim.Drudi.Cell.CoDi;
 using casim.Drudi.Cell.CoDi.Builder;
+using casim.Sanzani.States;
 using casim.Zama.Coordinates;
 using NUnit.Framework;
-using Sanzani.States;
 
 namespace casim.Drudi.Test
 {

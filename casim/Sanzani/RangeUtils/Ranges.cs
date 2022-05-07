@@ -1,8 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 
-namespace Sanzani.RangeUtils
+namespace casim.Sanzani.RangeUtils
 {
     /// <summary>
     ///     Utility class to that easily allows to create IRange instances.

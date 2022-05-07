@@ -1,9 +1,9 @@
 using System.Drawing;
+using casim.Sanzani.StateColorMapper;
+using casim.Sanzani.States;
 using NUnit.Framework;
-using Sanzani.StateColorMapper;
-using Sanzani.States;
 
-namespace Sanzani.Test
+namespace casim.Sanzani.Test
 {
     [TestFixture]
     public class StateColorMapperTest

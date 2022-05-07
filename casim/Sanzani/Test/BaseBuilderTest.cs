@@ -1,7 +1,7 @@
 using System;
 using NUnit.Framework;
 
-namespace Sanzani.Test
+namespace casim.Sanzani.Test
 {
     [TestFixture]
     public class BaseBuilderTest

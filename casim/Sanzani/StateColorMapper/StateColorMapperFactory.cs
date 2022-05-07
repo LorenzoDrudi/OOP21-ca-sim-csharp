@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using Sanzani.States;
+using casim.Sanzani.States;
 
-namespace Sanzani.StateColorMapper
+namespace casim.Sanzani.StateColorMapper
 {
     public class StateColorMapperFactory : IStateColorMapperFactory
     {

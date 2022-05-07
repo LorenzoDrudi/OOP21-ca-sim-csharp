@@ -1,4 +1,4 @@
-namespace Sanzani.States
+namespace casim.Sanzani.States
 {
     /// <summary>
     ///     The state of a Rule110 cell.

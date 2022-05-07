@@ -2,8 +2,8 @@ using System;
 using System.Linq;
 using casim.Drudi.Cell.CoDi;
 using casim.Drudi.Cell.CoDi.Builder;
+using casim.Sanzani.States;
 using NUnit.Framework;
-using Sanzani.States;
 
 namespace casim.Drudi.Test
 {
