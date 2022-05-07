@@ -3,9 +3,9 @@
     /// <summary>
     /// The grid.
     /// </summary>
-    /// <param name="K">Type of the Coordinates contained in Grid.</param>
-    /// <param name="V">Type of the elements contained in Grid.</param>
-    public interface IGrid<K, V>
+    /// <typeparam name="TCoord">Type of the Coordinates contained in Grid.</typeparam>
+    /// <typeparam name="TValue">Type of the elements contained in Grid.</typeparam>
+    public interface IGrid<TCoord, TValue>
     {
         /// <summary>
         /// Return the width of the cell.
@@ -21,35 +21,35 @@
         /// Return the value at given coordinates.
         /// </summary>
         /// <param name="coord">The Coordinates of the point.</param>
-        public V Get(K coord);
+        public TValue Get(TCoord coord);
 
         /// <summary>
         /// Set an element to a given value.
         /// </summary>
         /// <param name="coord">The Coordinates of the element to set.</param>
         /// <param name="value">the value to insert.</param>
-        public void Set(K coord, V value);
+        public void Set(TCoord coord, TValue value);
 
         /// <summary>
         /// Return true if parameter coord is inside the Grid.
         /// </summary>
         /// <param name="coord">The Coordinates of the point.</param>
-        public bool IsCoordValid(K coord);
+        public bool IsCoordValid(TCoord coord);
 
         /// <summary>
         /// Return a Stream of the elements in Grid.
         /// </summary>
-        public IQueryable<V> Stream();
+        public IQueryable<TValue> Stream();
 
         /// <summary>
         /// Return a list containing the pairs Coordinates + value of the Coordinates taken as input.
         /// </summary>
         /// <param name="positions">list containing all the Coordinates of which the method have to get the values.</param>
-        public List<Tuple<K, V>> GetValuesFrom(IList<K> positions)
+        public List<Tuple<TCoord, TValue>> GetValuesFrom(IList<TCoord> positions)
         {
             return positions.AsQueryable()
                 .Where(x => this.IsCoordValid(x))
-                .Select(coord => new Tuple<K, V>(coord, this.Get(coord)))
+                .Select(coord => new Tuple<TCoord, TValue>(coord, this.Get(coord)))
                 .ToList();
         }
     }

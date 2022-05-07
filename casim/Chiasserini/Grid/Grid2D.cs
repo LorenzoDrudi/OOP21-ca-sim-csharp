@@ -39,7 +39,7 @@ namespace casim.Chiasserini.Grid
         /// <param name="rows">the number of the rows of the Grid2D</param>
         /// <param name="columns">the number of the columns of the Grid2D</param>
         /// <param name="valueFunction">the function that maps coordinates to value.</param>
-        public Grid2D(int rows, int columns, Func<Coordinates2D, T> valueFunction)
+        private Grid2D(int rows, int columns, Func<Coordinates2D, T> valueFunction)
         {
             _rows = rows;
             _columns = columns;
@@ -80,9 +80,9 @@ namespace casim.Chiasserini.Grid
             return Grid.AsQueryable().SelectMany(x => x.AsQueryable());
         }
 
-        public IGrid2D<O> MapTo<O>(Func<T, O> mapper) where O : class
+        public IGrid2D<TOut> MapTo<TOut>(Func<T, TOut> mapper) where TOut : class
         {
-            return new Grid2D<O>(
+            return new Grid2D<TOut>(
                 _rows, 
                 _columns, 
                 (coord) => 

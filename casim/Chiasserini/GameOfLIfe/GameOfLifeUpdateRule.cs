@@ -15,8 +15,7 @@ namespace casim.Chiasserini.GameOfLIfe
         public GameOfLifeUpdateRule(Func<Tuple<Coordinates2D, GameOfLifeCell>,
                                                 IGrid<Coordinates2D, GameOfLifeCell>,
                                                 List<Tuple<Coordinates2D, GameOfLifeCell>>> neighborsFunction){}
-
-
+        
         /// <summary>
         /// Return the next neighbor of the cell.
         /// </summary>
@@ -34,7 +33,7 @@ namespace casim.Chiasserini.GameOfLIfe
         /// <param name="cellTuple">a Tuple that contains the GameOfLifeCell and his Coordinates2D.</param>
         /// <param name="neighborsTuple"> a List of all the GameOfLifeCell neighbors and his Coordinates2D.</param>
         /// <returns></returns>
-        public GameOfLifeCell NextCell(Tuple<Coordinates2D, GameOfLifeCell> cellTuple, List<Tuple<Coordinates2D, GameOfLifeCell>> neighborsTuple)
+        private GameOfLifeCell NextCell(Tuple<Coordinates2D, GameOfLifeCell> cellTuple, List<Tuple<Coordinates2D, GameOfLifeCell>> neighborsTuple)
         {
             int aliveCells = this.CountAliveNeighbors(neighborsTuple);
 

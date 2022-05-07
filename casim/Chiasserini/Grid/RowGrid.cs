@@ -12,9 +12,9 @@ namespace casim.Chiasserini.Grid
         public int Height => _rows;
         public int Width => _columns;
         
-        internal RowGrid(Grid2D<T> Grid)
+        internal RowGrid(Grid2D<T> grid)
         {
-            this.Grid = Grid;
+            this.Grid = grid;
         }
 
         public IList<T> GetRow(int row)
@@ -62,7 +62,7 @@ namespace casim.Chiasserini.Grid
             this.Grid.Set(row, column, value);
         }
 
-        public IGrid2D<O> MapTo<O>(Func<T, O> mapper) where O : class
+        public IGrid2D<TOut> MapTo<TOut>(Func<T, TOut> mapper) where TOut : class
         {
             return this.Grid.MapTo(mapper);
         }

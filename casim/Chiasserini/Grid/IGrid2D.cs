@@ -27,8 +27,8 @@ namespace casim.Chiasserini.Grid
         /// Return a new IGrid2D applying a mapper function to the elements of grid.
         /// </summary>
         /// <param name="mapper">The map function.</param>
-        /// <typeparam name="O">The type if the element of the output grid.</typeparam>
+        /// <typeparam name="TOut">The type if the element of the output grid.</typeparam>
         /// <returns></returns>
-        public IGrid2D<O> MapTo<O>(Func<T, O> mapper) where O : class;
+        public IGrid2D<TOut> MapTo<TOut>(Func<T, TOut> mapper) where TOut : class;
     }
 }

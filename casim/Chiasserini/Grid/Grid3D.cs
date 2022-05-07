@@ -89,9 +89,9 @@ namespace casim.Chiasserini.Grid
         {
             return Grid.AsQueryable().SelectMany(x=>x.AsQueryable().SelectMany(y => y.AsQueryable()));
         }
-        public IGrid3D<O> MapTo<O>(Func<T, O> mapper) where O : class
+        public IGrid3D<TOut> MapTo<TOut>(Func<T, TOut> mapper) where TOut : class
         {
-            return new Grid3D<O>(
+            return new Grid3D<TOut>(
                 _rows, 
                 _columns,
                 _depth,
