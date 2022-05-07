@@ -12,7 +12,7 @@ namespace casim.Chiasserini.GameOfLIfe
     public class GameOfLife : Automaton<GameOfLifeCell, GameOfLifeState>
     {
         private Grid2D<GameOfLifeCell> _state;
-        private GameOfLifeUpdateRule updateRule = new GameOfLifeUpdateRule(
+        private readonly GameOfLifeUpdateRule _updateRule = new GameOfLifeUpdateRule(
                     NeighborsFunctions.MooreNeighborsFunction<GameOfLifeCell, GameOfLifeState>);
         
         public GameOfLife(IGrid<Coordinates2D, GameOfLifeCell> grid) : base(grid)
@@ -36,12 +36,12 @@ namespace casim.Chiasserini.GameOfLIfe
         {
             var newState = new Grid2D<GameOfLifeCell>(this._state.Height, this._state.Width, ()=> null);
 
-            for (int x = 0; x <  this._state.Height; x++)
+            for (var x = 0; x <  this._state.Height; x++)
             {
-                for (int y = 0; y < this._state.Width; y++)
+                for (var y = 0; y < this._state.Width; y++)
                 {
                     var coord = CoordinatesUtil.Of(x, y);
-                    newState.Set(coord, this.updateRule.GetNextCell(Tuple.Create(coord, this._state.Get(coord)), this._state));
+                    newState.Set(coord, this._updateRule.GetNextCell(Tuple.Create(coord, this._state.Get(coord)), this._state));
                 }
             }
 

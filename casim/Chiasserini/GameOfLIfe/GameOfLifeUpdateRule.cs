@@ -15,8 +15,8 @@ namespace casim.Chiasserini.GameOfLIfe
             List<Tuple<Coordinates2D, GameOfLifeCell>>> neighborsFunction;
         
         public GameOfLifeUpdateRule(Func<Tuple<Coordinates2D, GameOfLifeCell>,
-                                                IGrid<Coordinates2D, GameOfLifeCell>,
-                                                List<Tuple<Coordinates2D, GameOfLifeCell>>> neighborsFunction){}
+                                    IGrid<Coordinates2D, GameOfLifeCell>,
+                                    List<Tuple<Coordinates2D, GameOfLifeCell>>> neighborsFunction){}
         
         /// <summary>
         /// Return the next neighbor of the cell.
@@ -37,29 +37,19 @@ namespace casim.Chiasserini.GameOfLIfe
         /// <returns></returns>
         private GameOfLifeCell NextCell(Tuple<Coordinates2D, GameOfLifeCell> cellTuple, List<Tuple<Coordinates2D, GameOfLifeCell>> neighborsTuple)
         {
-            int aliveCells = this.CountAliveNeighbors(neighborsTuple);
+            var aliveCells = CountAliveNeighbors(neighborsTuple);
 
             if (cellTuple.Item2.State == GameOfLifeState.Alive)
             {
-                if (aliveCells == 2 || aliveCells == 3)
-                {
-                    return new GameOfLifeCell(GameOfLifeState.Alive);
-                }
-                else
-                {
-                    return new GameOfLifeCell(GameOfLifeState.Dead);
-                }
+                return aliveCells == 2 || aliveCells == 3
+                    ? new GameOfLifeCell(GameOfLifeState.Alive)
+                    : new GameOfLifeCell(GameOfLifeState.Dead);
             }
             else
             {
-                if (aliveCells == 3)
-                {
-                    return new GameOfLifeCell(GameOfLifeState.Alive);
-                }
-                else
-                {
-                    return new GameOfLifeCell(GameOfLifeState.Dead);
-                }
+                return aliveCells == 3 
+                    ? new GameOfLifeCell(GameOfLifeState.Alive) 
+                    : new GameOfLifeCell(GameOfLifeState.Dead);
             }
         }
 
@@ -70,7 +60,7 @@ namespace casim.Chiasserini.GameOfLIfe
         /// <returns>count the number of the neighboring cells.</returns>
         private int CountAliveNeighbors(IEnumerable<Tuple<Coordinates2D, GameOfLifeCell>> neighborsTuple)
         {
-            int count = 0;
+            var count = 0;
             do
             {
                 if (neighborsTuple.GetEnumerator().Current.Item2.State == GameOfLifeState.Alive)
