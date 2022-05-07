@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using casim.Chiasserini.Grid;
 using casim.Sanzani.RangeUtils;
 using NUnit.Framework;
@@ -11,12 +12,12 @@ namespace casim.Chiasserini.Test
     public class RowGridTest
     {
         private const int Rows = 3;
-        private const int Columns = 2;
+        private const int Columns = 3;
         private const int NewValue = 2;
         private const int DefaultValue = 1;
         private const int FirstRowValue = 0;
         
-        private Grid2D<int> TestGetGrid()
+        private IGrid2D<int> TestGetGrid()
         {
             return new Grid2D<int>(Rows, Columns, () => DefaultValue);
         }
@@ -24,11 +25,12 @@ namespace casim.Chiasserini.Test
         private RowGrid<int> TestGridWithValues()
         {
             var grid = new RowGrid<int>(this.TestGetGrid());
-            for(var x=0; x<Rows;x++)
+            for(var x = 0; x < Rows; x++)
             {
-                for (int y = 0; y < Columns; y++)
+                var val = x % 2;
+                for (var y = 0; y < Columns; y++)
                 {
-                    grid.Set(x, y, x+y);
+                    grid.Set(x, y, x+val);
                 }
             }
             return grid;
