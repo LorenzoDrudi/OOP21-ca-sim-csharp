@@ -8,28 +8,27 @@ namespace casim.Chiasserini.Grid
 {
     public class RowGrid<T> : IGrid2D<T>
     {
-        private readonly int _rows;
-        private readonly int _columns;
-        
         private IGrid2D<T> Grid { get; set; }
-        public int Height => _rows;
-        public int Width => _columns;
-        
+        public int Height { get; }
+        public int Width { get; }
+
         internal RowGrid(IGrid2D<T> grid)
         {
             this.Grid = grid;
+            this.Height = grid.Height;
+            this.Width = grid.Width;
         }
 
         public IList<T> GetRow(int row)
         {
             IList<T> list = new List<T>();
-            Ranges.Of(0, this.Grid.Width).ToList().ForEach(column => list.Add(this.Get(row, column)));
+            Ranges.Of(0, this.Width).ToList().ForEach(column => list.Add(this.Get(row, column)));
             return list;
         }
 
         public void SetRow(int row, List<T> list)
         {
-            if (list.Count != this.Grid.Width)
+            if (list.Count != this.Width)
             {
                 throw new ArgumentException("Wrong list size");
             }
