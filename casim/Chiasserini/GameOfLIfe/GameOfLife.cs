@@ -1,4 +1,5 @@
-﻿using casim.Chiasserini.Grid;
+﻿using System;
+using casim.Chiasserini.Grid;
 using casim.Drudi.AbstractionUtils;
 using casim.Drudi.Automaton;
 using casim.Zama.Coordinates;
