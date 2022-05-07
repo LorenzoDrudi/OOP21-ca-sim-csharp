@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using casim.Chiasserini.Grid;
 using casim.Zama.Coordinates;
 using NUnit.Framework;
@@ -42,8 +43,8 @@ namespace casim.Chiasserini.Test
             var grid = TestGetGrid();
             Assert.DoesNotThrow(()=>grid.Set(X,Y,NewValue));
             Assert.AreEqual(NewValue, grid.Get(X, Y));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Get(X, Columns));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Get(Rows, Y));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Get(X, Columns));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Get(Rows, Y));
         }
         
         [Test]
@@ -53,8 +54,8 @@ namespace casim.Chiasserini.Test
             var grid = TestGetGrid();
             Assert.DoesNotThrow(()=>grid.Set(coord, NewValue));
             Assert.AreEqual(NewValue, grid.Get(coord));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Get(CoordinatesUtil.Of(X, Columns)));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Get(CoordinatesUtil.Of(Rows, Y)));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Get(CoordinatesUtil.Of(X, Columns)));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Get(CoordinatesUtil.Of(Rows, Y)));
         }
         
         [Test]
@@ -94,8 +95,8 @@ namespace casim.Chiasserini.Test
             var grid = TestGetGrid();
             Assert.DoesNotThrow(()=>grid.Set(X, Y, NewValue));
             Assert.AreEqual(NewValue, grid.Get(X, Y));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Set(X, Columns, NewValue));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Set(Rows, Y, NewValue));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Set(X, Columns, NewValue));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Set(Rows, Y, NewValue));
         }
         
         [Test]
@@ -105,8 +106,8 @@ namespace casim.Chiasserini.Test
             var grid = TestGetGrid();
             Assert.DoesNotThrow(()=>grid.Set(coord, NewValue));
             Assert.AreEqual(NewValue, grid.Get(coord));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Set(CoordinatesUtil.Of(X, Columns), NewValue));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Set(CoordinatesUtil.Of(Rows, Y), NewValue));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Set(CoordinatesUtil.Of(X, Columns), NewValue));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Set(CoordinatesUtil.Of(Rows, Y), NewValue));
         }
 
         [Test]
@@ -122,7 +123,7 @@ namespace casim.Chiasserini.Test
                 }
             }
 
-            Assert.AreEqual(elements, grid.Stream());
+            Assert.AreEqual(elements, grid.Stream().ToHashSet());
         }
     }
 
