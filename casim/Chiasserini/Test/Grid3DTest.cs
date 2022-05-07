@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using casim.Chiasserini.Grid;
 using casim.Zama.Coordinates;
 using NUnit.Framework;
@@ -12,8 +13,8 @@ namespace casim.Chiasserini.Test
     public class Grid3DTest
     {
         private const int Rows = 3;
-        private const int Columns = 2;
-        private const int Depth = 2;
+        private const int Columns = 3;
+        private const int Depth = 3;
         private const int X = 0;
         private const int Y = 1;
         private const int Z = 1;
@@ -47,9 +48,9 @@ namespace casim.Chiasserini.Test
             var grid = TestGetGrid();
             Assert.DoesNotThrow(()=>grid.Set(X,Y,Z,NewValue));
             Assert.AreEqual(NewValue, grid.Get(X, Y,Z));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Get(X, Columns,Z));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Get(Rows, Y,Z));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Get(X, Y,Depth));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Get(X, Columns,Z));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Get(Rows, Y,Z));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Get(X, Y,Depth));
         }
         
         [Test]
@@ -59,9 +60,9 @@ namespace casim.Chiasserini.Test
             var grid = TestGetGrid();
             Assert.DoesNotThrow(()=>grid.Set(coord, NewValue));
             Assert.AreEqual(NewValue, grid.Get(coord));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Get(CoordinatesUtil.Of(X, Columns,Z)));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Get(CoordinatesUtil.Of(Rows, Y,Z)));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Get(CoordinatesUtil.Of(X, Y,Depth)));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Get(CoordinatesUtil.Of(X, Columns,Z)));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Get(CoordinatesUtil.Of(Rows, Y,Z)));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Get(CoordinatesUtil.Of(X, Y,Depth)));
         }
         
         [Test]
@@ -118,9 +119,9 @@ namespace casim.Chiasserini.Test
             var grid = TestGetGrid();
             Assert.DoesNotThrow(()=>grid.Set(X, Y, Z,NewValue));
             Assert.AreEqual(NewValue, grid.Get(X, Y,Z));
-            Assert.Throws(typeof(IndexOutOfRangeException), () => grid.Set(X, Columns, Z,NewValue));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Set(Rows, Y, Z,NewValue));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Set(X, Y, Depth,NewValue));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), () => grid.Set(X, Columns, Z,NewValue));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Set(Rows, Y, Z,NewValue));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Set(X, Y, Depth,NewValue));
         }
         
         [Test]
@@ -130,9 +131,9 @@ namespace casim.Chiasserini.Test
             var grid = TestGetGrid();
             Assert.DoesNotThrow(()=>grid.Set(coord, NewValue));
             Assert.AreEqual(NewValue, grid.Get(coord));
-            Assert.Throws(typeof(IndexOutOfRangeException), () => grid.Set(CoordinatesUtil.Of(X, Columns, Z), NewValue));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Set(CoordinatesUtil.Of(Rows, Y, Z),NewValue));
-            Assert.Throws(typeof(IndexOutOfRangeException), ()=> grid.Set(CoordinatesUtil.Of(X, Y, Depth),NewValue));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), () => grid.Set(CoordinatesUtil.Of(X, Columns, Z), NewValue));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Set(CoordinatesUtil.Of(Rows, Y, Z),NewValue));
+            Assert.Throws(typeof(ArgumentOutOfRangeException), ()=> grid.Set(CoordinatesUtil.Of(X, Y, Depth),NewValue));
         }
         
         [Test]
@@ -150,7 +151,7 @@ namespace casim.Chiasserini.Test
                     }
                 }
             }
-            Assert.AreEqual(elements, grid.Stream());
+            Assert.AreEqual(elements, grid.Stream().ToHashSet());
         }
     }
 }
